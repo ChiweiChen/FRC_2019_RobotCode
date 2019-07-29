@@ -1,0 +1,9 @@
+[
+  {
+    "name": "MyFirstCommandRobot (in project MyFirstCommandRobot)",
+    "file": "C:\\Users\\HP\\VSCodeTrainingGuides\\MyFirstCommandRobot\\build\\libs\\MyFirstCommandRobot.jar",
+    "extensions": [],
+    "librarydir": "C:\\Users\\HP\\VSCodeTrainingGuides\\MyFirstCommandRobot\\build\\tmp\\jniExtractDir",
+    "mainclass": "frc.robot.Main"
+  }
+]
