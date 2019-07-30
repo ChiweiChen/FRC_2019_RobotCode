@@ -18,8 +18,8 @@ public class RobotMap {
   public static final int OPERATOR_PORT=1;
   public static final int DRIVE_MASTER_LEFT_PORT=1;
   public static final int DRIVE_FOLLOWER_LEFT_PORT=2;
-  public static final int DRIVE_MASTER_RIGHT_PORT=5;
-  public static final int DRIVE_FOLLOWER_RIGHT_PORT=4;//5
+  public static final int DRIVE_MASTER_RIGHT_PORT=3;
+  public static final int DRIVE_FOLLOWER_RIGHT_PORT=4;
   public static final int ELEVATOR_PORT=5;
   public static final int CLAW_LEFT_PORT=9;
   public static final int CLAW_RIGHT_PORT=10;
