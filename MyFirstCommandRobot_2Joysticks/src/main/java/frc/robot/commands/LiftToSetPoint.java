@@ -15,8 +15,8 @@ public class LiftToSetPoint extends Command {
   public LiftToSetPoint(double setPoint) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    this.setPoint=setPoint;
     requires(Robot.lift);
+    this.setPoint=setPoint;
   }
   // Called just before this Command runs the first time
   @Override
