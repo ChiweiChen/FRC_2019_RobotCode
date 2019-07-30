@@ -58,9 +58,9 @@ public class OI {
     operatorStick=new Joystick(1);
     button1.whenPressed(new DriveForwardByTime(2000));
     button2.whenPressed(new DriveStop());
-    buttonEleUp.whenPressed(new ElevatorUpByTime(1500));
-    buttonEleDown.whenPressed(new ElevatorDownByTime(1500));
-    buttonEleStop.whenPressed(new ElevatorStop());
+    buttonEleUp.whenPressed(new LiftToSetPoint(10000.0));
+    buttonEleDown.whenPressed(new LiftToSetPoint(0));
+    buttonEleStop.whenPressed(new LiftHold());
     buttonIntake.whenPressed(new Intake());
     buttonOuttake.whenPressed(new Outtake());
   }
