@@ -26,10 +26,10 @@ public class Lift extends Subsystem {
   private WPI_TalonSRX talon;
   public static final double LIFT_TOLERANCE=20;//not sure
   public static final double FIRST_GOAL_POS=0.0;
-  public static final double SECOND_GOAL_POS=34000.0;//not sure
+  public static final double SECOND_GOAL_POS=3400.0;//not sure
   public static final double ALL_TO_ZERO=0.0;
-  public static final int MAX_CRUISE_VELOCITY=3900;//not sure
-  public static final int MAX_ACCELERATION=10000;//not sure
+  public static final int MAX_CRUISE_VELOCITY=390;//not sure
+  public static final int MAX_ACCELERATION=800;//not sure
 
   public double goalPos;
   public Lift(){
@@ -37,9 +37,9 @@ public class Lift extends Subsystem {
     talon.setInverted(true);
     talon.setSensorPhase(true);
     talon.config_kF(0,0.20,10);//n s
-    talon.config_kP(0,1.0,10);//n s
+    talon.config_kP(0,0.10,10);//n s
     talon.config_kI(0,0,10);//n s
-    talon.config_kD(0,0,10);//n s
+    talon.config_kD(0,0.10,10);//n s
     talon.configMotionAcceleration(MAX_ACCELERATION);
     talon.configMotionCruiseVelocity(MAX_CRUISE_VELOCITY);
 
@@ -51,7 +51,7 @@ public class Lift extends Subsystem {
     talon.set(0.1);
   }
   public void down(){
-    talon.set(-0.1);
+    talon.set(-0.2);
   }
   public void stop(){
     talon.set(0);

@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.*;
+import frc.robot.subsystems.Lift;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -51,18 +52,26 @@ public class OI {
   Button buttonEleUp=new JoystickButton(operatorStick, 1);
   Button buttonEleDown=new JoystickButton(operatorStick, 2);
   Button buttonEleStop=new JoystickButton(operatorStick, 3);
-  Button buttonIntake=new JoystickButton(operatorStick, 4);
-  Button buttonOuttake=new JoystickButton(operatorStick, 5);
+  Button buttonIntake=new JoystickButton(operatorStick, 7);
+  Button buttonOuttake=new JoystickButton(operatorStick, 8);
+  Button buttonPD=new JoystickButton(operatorStick, 6);
+  //Button buttonPM=new JoystickButton(operatorStick, 7);
+  Button buttonClawStop = new JoystickButton(operatorStick, 4);
+  Button buttonPU=new JoystickButton(operatorStick, 5);
   public OI(){
     drivingStick=new Joystick(0);
     operatorStick=new Joystick(1);
     button1.whenPressed(new DriveForwardByTime(2000));
     button2.whenPressed(new DriveStop());
-    buttonEleUp.whenPressed(new LiftToSetPoint(10000.0));
-    buttonEleDown.whenPressed(new LiftToSetPoint(0));
+    buttonEleUp.whenPressed(new LiftToSetPoint(Lift.SECOND_GOAL_POS));
+    buttonEleDown.whenPressed(new LiftToSetPoint(Lift.FIRST_GOAL_POS));
     buttonEleStop.whenPressed(new LiftHold());
     buttonIntake.whenPressed(new Intake());
     buttonOuttake.whenPressed(new Outtake());
+    buttonClawStop.whenPressed(new ClawStop());
+    //buttonPD.whenPressed(new PivotToGround());
+    //buttonPM.whenPressed(new PivotToM());
+    //buttonPU.whenPressed(new PivotUp());
   }
   public double getDrivingStickY(){
     return drivingStick.getY();

@@ -35,17 +35,17 @@ public class Drivetrain extends Subsystem{
     }
     public void driveByJoystick(double yDir,double xDir){
         SmartDashboard.putString("driveByJoystick?", yDir+","+xDir);
-        drive.arcadeDrive(yDir, xDir);
+        drive.arcadeDrive(-yDir, xDir);
     }
     public void stop(){
         drive.stopMotor();
     }
     public void forward(){
         masterLeft.set(0.2);
-        masterRight.set(-0.2);
+        masterRight.set(0.2);
     }
     public void backward(){
-        masterLeft.set(-0.2);
+        masterLeft.set(0.2);
         masterRight.set(0.2);
     }
     @Override

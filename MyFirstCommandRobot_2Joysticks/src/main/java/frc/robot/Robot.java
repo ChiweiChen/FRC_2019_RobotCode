@@ -17,6 +17,7 @@ import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Pivot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,6 +32,7 @@ public class Robot extends TimedRobot {
   public static OI oi;
   public static Claw claw;
   public static Lift lift;
+  public static Pivot pivot;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -44,6 +46,7 @@ public class Robot extends TimedRobot {
     drivetrain = new Drivetrain();
     lift = new Lift();
     claw = new Claw();
+    pivot = new Pivot();
     oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());

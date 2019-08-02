@@ -8,12 +8,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-
-
 import frc.robot.Robot;
-
 public class Outtake extends Command {
-  int spinning=0;
   public Outtake() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -28,21 +24,13 @@ public class Outtake extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.claw.stop();
-    spinning++;
-    Robot.claw.intake();
+    Robot.claw.outtake();
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (spinning>0&&spinning%2==0){
-      return true;
-    }
-    else {
       return false;
-    }
-    
   }
 
   // Called once after isFinished returns true

@@ -10,47 +10,35 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ElevatorDownByTime extends Command {
-  long runTime;
-  int timeInMs;
-  long startTime;
-  public ElevatorDownByTime(int timeInMs) {
+public class ClawStop extends Command {
+  public ClawStop() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.lift);
-    this.timeInMs=timeInMs;
+    requires(Robot.claw);
   }
-
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    startTime=System.currentTimeMillis();
+    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    runTime=System.currentTimeMillis()-startTime;
-    Robot.drivetrain.forward();
+    Robot.claw.stop();
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if(runTime>timeInMs){
-      Robot.drivetrain.stop();
-      return true;
-    }
-    else
-      return false;
-    
+    return true;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.lift.stop();
+    Robot.claw.stop();
   }
 
   // Called when another command which requires one or more of the same
