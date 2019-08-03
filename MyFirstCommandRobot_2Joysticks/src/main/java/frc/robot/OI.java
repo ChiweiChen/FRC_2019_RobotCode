@@ -54,10 +54,10 @@ public class OI {
   Button buttonEleStop=new JoystickButton(operatorStick, 3);
   Button buttonIntake=new JoystickButton(operatorStick, 7);
   Button buttonOuttake=new JoystickButton(operatorStick, 8);
-  Button buttonPD=new JoystickButton(operatorStick, 6);
-  //Button buttonPM=new JoystickButton(operatorStick, 7);
+  Button buttonPD=new JoystickButton(operatorStick, 5);
+  Button buttonPM=new JoystickButton(operatorStick, 6);
   Button buttonClawStop = new JoystickButton(operatorStick, 4);
-  Button buttonPU=new JoystickButton(operatorStick, 5);
+  Button buttonPU=new JoystickButton(operatorStick, 10);
   public OI(){
     drivingStick=new Joystick(0);
     operatorStick=new Joystick(1);
@@ -65,18 +65,21 @@ public class OI {
     button2.whenPressed(new DriveStop());
     buttonEleUp.whenPressed(new LiftToSetPoint(Lift.SECOND_GOAL_POS));
     buttonEleDown.whenPressed(new LiftToSetPoint(Lift.FIRST_GOAL_POS));
-    buttonEleStop.whenPressed(new LiftHold());
+    buttonEleStop.whenPressed(new LiftToSetPoint(Lift.THIRD_GOAL_POS));
     buttonIntake.whenPressed(new Intake());
     buttonOuttake.whenPressed(new Outtake());
     buttonClawStop.whenPressed(new ClawStop());
-    //buttonPD.whenPressed(new PivotToGround());
-    //buttonPM.whenPressed(new PivotToM());
-    //buttonPU.whenPressed(new PivotUp());
+    buttonPD.whenPressed(new PivotToGround());
+    buttonPM.whenPressed(new PivotToM());
+    buttonPU.whenPressed(new PivotUp());
   }
   public double getDrivingStickY(){
     return drivingStick.getY();
   }
   public double getDrivingStickX(){
     return drivingStick.getX();
+  }
+  public double getOperatorStickY(){
+    return operatorStick.getY();
   }
 }

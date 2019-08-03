@@ -16,9 +16,9 @@ public class Pivot extends Subsystem {
 
 	public static final double PIVOT_DOWN_INCREMENT = 125;
 	public static final double PIVOT_UP_INCREMENT = 200;
-	public static final double PIVOT_GROUND = -3870;
-	public static final double PIVOT_UP = -1370;
-	public static final double PIVOT_M = -560;
+	public static final double PIVOT_GROUND = -3875;
+	public static final double PIVOT_UP = -1371;
+	public static final double PIVOT_M = 3000;
 	public static final double PIVOT_TOLERANCE = 100;//all not sure
 
 	public static enum PivotDirection {
@@ -44,9 +44,9 @@ public class Pivot extends Subsystem {
 
 	public void setupPivotFPID() {
 		pivot.config_kF(0, 0, 10);
-		pivot.config_kP(0, 1.5, 10);
+		pivot.config_kP(0, 0.1, 10);
 		pivot.config_kI(0, 0, 10);
-		pivot.config_kD(0, 15, 10);	
+		pivot.config_kD(0, 0.1, 10);	
   }
 
   public void setPivotPosition(double pos){

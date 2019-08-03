@@ -16,6 +16,7 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Hook;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Pivot;
 
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
   public static Claw claw;
   public static Lift lift;
   public static Pivot pivot;
+  public static Hook hook;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

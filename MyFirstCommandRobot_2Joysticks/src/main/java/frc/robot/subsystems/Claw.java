@@ -32,13 +32,13 @@ public class Claw extends Subsystem {
   }
 
   public void intake(){
-    clawLeft.set(0.2);
-    clawRight.set(-0.2);
+    clawLeft.set(0.35);
+    clawRight.set(0.35);
   }
 
   public void outtake(){
-    clawLeft.set(-0.2);
-    clawRight.set(0.2);
+    clawLeft.set(-0.35);
+    clawRight.set(-0.35);
   }
 
   public void stop(){
